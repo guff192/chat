@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}
+    Chat
+{% endblock %}
+{% block content %}
+    {#TODO: Make chat template#}
+    {% for message in message_list %}
+        <p>{{ message.text }}</p>
+    {% endfor %}
+
+{% endblock %}

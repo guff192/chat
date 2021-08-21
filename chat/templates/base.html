@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+<div class="nav">
+    <h1><a href="{% url 'chat' %}" class="nav-heading-link">Chat</a></h1>
+
+    <div class="login-logout-reg-nav">
+        {% if user.is_authenticated %}
+            Добро пожаловать, {{ user.username }} |
+            <a href="{% url 'logout' %}">Выйти из аккаунта</a>
+        {% else %}
+            <a href="{% url 'login' %}">Войти на сайт</a> |
+            <a href="{% url 'sign_up' %}">Зарегистрироваться</a>
+        {% endif %}
+    </div>
+</div>
+{% block content %}
+{% endblock %}
+</body>
+</html>

@@ -1,3 +1,8 @@
-from django.shortcuts import render
+from django.views.generic import ListView
 
-# Create your views here.
+from chat.models import Message
+
+
+class MessageListView(ListView):
+    model = Message
+    template_name = 'chat/chat.html'

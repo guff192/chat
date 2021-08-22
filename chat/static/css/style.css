@@ -1,12 +1,28 @@
 body {
     margin: 0 10%;
+    background-color: #a4fbff52;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;;
 }
 
 img {
-    width: 80%;
-    height: 80%;
+    width: 350px;
+    height: 350px;
 }
 
+.small-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    float: left;
+    margin-right: 10px;
+}
 
 .content {
     display: flex;
@@ -16,7 +32,41 @@ img {
 }
 
 
+.profile img {
+    float: left;
+    margin-right: 200px;
+    border-radius: 180px;
+}
+
+.profile-info {
+    display: inline-block;
+}
+
+
+/*Chat messages styles*/
+.message {
+    border-bottom: 1px solid gray;
+    display: flex;
+    flex-flow: column;
+}
+
+.message-author, .message-created {
+    display: inline-block;
+}
+
+.message-author {
+    float: left;
+    font-weight: bold;
+}
+
+.message-created {
+    float: right;
+    color: #bbbbbb;
+}
+
+
 /*Form styles*/
+.message-form,
 .login-form,
 .signup-form,
 .password-change-form,
@@ -24,9 +74,7 @@ img {
     box-shadow: 4px 4px 10px 5px #c0d8ea;
     width: 80%;
     margin: 0 auto;
-    display: flex;
-    flex-flow: column;
-    align-items: center;
+    padding: 0 20px;
 }
 
 
@@ -35,17 +83,20 @@ form li, form p {
     flex-flow: column;
 }
 
+
+.message-form input[type=submit],
 .login-form input[type=submit],
 .signup-form input[type=submit],
 .password-change-form input[type=submit],
 .password-reset-form input[type=submit] {
     padding: 10px 20px;
     border-radius: 7px;
-    margin: 0 15%;
+    margin: 0 15% 5%;
     cursor: pointer;
 }
 
 
+.message-form label,
 .login-form label,
 .signup-form label,
 .password-change-form label,
@@ -54,6 +105,7 @@ form li, form p {
     padding: 5px 0;
 }
 
+.message-form input,
 .login-form input,
 textarea,
 .signup-form input,
@@ -65,16 +117,17 @@ textarea,
     padding: 6px 10px;
 }
 
+textarea {
+    height: 20px;
+}
+
 .login-heading,
 .signup-heading,
 .password-change-heading,
 .password-reset-heading {
 }
 
-.login-para,
-.signup-para,
-.password-change-para,
-.password-reset-para {
+.help-text {
     font-size: 20px;
     font-weight: bold;
 }
@@ -99,13 +152,8 @@ form .errorlist {
 }
 
 .nav a {
-    text-decoration: none;
     line-height: 25px;
     color: white;
-}
-
-.nav a:hover {
-    text-decoration: underline;
 }
 
 .login-logout-reg-nav {
@@ -121,17 +169,17 @@ form .errorlist {
 }
 
 
-/*Message styles*/
-.message-box {
+/*Info messages styles*/
+.info-box {
     display: flex;
     justify-content: center;
     width: 100%;
 }
 
-.success-message {
+.success-info {
     background-color: #99dabc;
 }
 
-.error-message {
+.error-info {
     background-color: #d77070;
 }

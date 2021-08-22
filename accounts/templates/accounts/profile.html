@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Profile
+{% endblock %}
+
+{% block content %}
+    <h1>Кабинет пользователя</h1>
+
+    <div class="profile">
+        <img src="{{ profile.avatar.url }}">
+        <div class="profile-info">
+            <p>Профиль: {{ profile }}</p>
+            <p>Email: {{ profile.user.email }}</p>
+            {% if profile.user.is_authenticated and profile.user.is_staff %}
+                <a href="{% url 'admin:index' %}">Админ-панель</a>
+            {% endif %}
+        </div>
+    <p class="help-text">Вы можете <a href="{% url 'change-profile' %}">изменить свой профиль</a></p>
+    </div>
+{% endblock %}

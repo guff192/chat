@@ -6,7 +6,7 @@
     <div class="login-form">
         <h1 class="login-heading">Вход</h1>
         {% if form.errors %}
-            <p class="login-para">Неверное имя пользователя или пароль</p>
+            <p class="help-text">Неверное имя пользователя или пароль</p>
         {% endif %}
         <form method="POST">
             {% csrf_token %}
@@ -14,10 +14,9 @@
             <p><input type="submit" value="Войти на сайт"></p>
         </form>
     </div>
-    <p class="login-para">Зарегистрироваться на сайте <a href="{% url 'sign_up' %}">можно здесь</a></p>
-
-    <p class="login-para">Забыли пароль? Его можно <a href="{% url 'password_reset' %}">восстановить здесь</a></p>
-    <p class="login-para">Поменять пароль на новый <a href="{% url 'password_change' %}">можно здесь</a></p>
+    <p class="help-text">Зарегистрироваться на сайте <a href="{% url 'sign_up' %}">можно здесь</a></p>
+    <p class="help-text">Забыли пароль? Его можно <a href="{% url 'password_reset' %}">восстановить здесь</a></p>
+    <p class="help-text">Поменять пароль на новый <a href="{% url 'password_change' %}">можно здесь</a></p>
 
 
 {% endblock content %}

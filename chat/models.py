@@ -13,4 +13,4 @@ class Message(models.Model):
         return truncatewords(self.text, 40)
 
     class Meta:
-        ordering = ['created', 'sent_by']
+        ordering = ['-created', 'sent_by']

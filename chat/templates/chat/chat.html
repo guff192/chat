@@ -3,9 +3,30 @@
     Chat
 {% endblock %}
 {% block content %}
-    {#TODO: Make chat template#}
-    {% for message in message_list %}
-        <p>{{ message.text }}</p>
-    {% endfor %}
+    <div class="message-form">
 
+        {% if user.is_authenticated %}
+            <form method="post">
+            {% csrf_token %}
+            {{ form.as_ul }}
+            <p><input type="submit" value="Отправить сообщение"></p>
+        {% else %}
+            <p class="help-text">Для того, чтобы оставлять сообщения, необходимо
+                <a href="{% url 'login' %}">авторизоваться</a></p>
+        {% endif %}
+
+        {% for message in message_list %}
+            <div class="message">
+                <div class="message-info">
+                    <img src="{{ message.sent_by.profile.avatar.url }}" class="small-avatar">
+                    <p class="message-author">{{ message.sent_by }}</p>
+                    <p class="message-created">{{ message.created|date:"SHORT_DATETIME_FORMAT" }}</p>
+                </div>
+                <p class="message-text">{{ message.text }}</p>
+            </div>
+        {% endfor %}
+
+        </form>
+    </div>
 {% endblock %}
+</div>

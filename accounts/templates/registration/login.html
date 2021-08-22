@@ -3,13 +3,11 @@
 {% block title %}Вход на сайт{% endblock title %}
 
 {% block content %}
-    <h1 class="login-heading">Вход на сайт</h1>
-    {% if form.errors %}
-        <p class="login-para">Имя пользователя или пароль введены неправильно</p>
-    {% else %}
-        <p class="login-para">Используйте следующую форму для входа на сайт:</p>
-    {% endif %}
     <div class="login-form">
+        <h1 class="login-heading">Вход</h1>
+        {% if form.errors %}
+            <p class="login-para">Неверное имя пользователя или пароль</p>
+        {% endif %}
         <form method="POST">
             {% csrf_token %}
             {{ form.as_p }}

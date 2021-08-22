@@ -11,3 +11,6 @@ class Message(models.Model):
     @property
     def shortened(self):
         return truncatewords(self.text, 40)
+
+    class Meta:
+        ordering = ['created', 'sent_by']

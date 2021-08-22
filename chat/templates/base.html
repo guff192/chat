@@ -1,24 +1,43 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 </head>
 <body>
+
 <div class="nav">
-    <h1><a href="{% url 'chat' %}" class="nav-heading-link">Chat</a></h1>
+    <a href="{% url 'chat' %}" class="nav-heading-link">Чат</a>
 
     <div class="login-logout-reg-nav">
         {% if user.is_authenticated %}
-            Добро пожаловать, {{ user.username }} |
-            <a href="{% url 'logout' %}">Выйти из аккаунта</a>
+            <a href="{% url 'logout' %}">Выход</a>
         {% else %}
-            <a href="{% url 'login' %}">Войти на сайт</a> |
-            <a href="{% url 'sign_up' %}">Зарегистрироваться</a>
+            <a href="{% url 'sign_up' %}">Регистрация</a>
+            <a href="{% url 'login' %}">Авторизация</a>
         {% endif %}
     </div>
 </div>
-{% block content %}
-{% endblock %}
+
+
+    {% for message in messages %}
+
+            <div class="message-box
+{% if 'success' in message.tags %}success-message
+{% elif 'error' in message.tags %}error-message{% endif %}">
+            <p>{{ message }}</p>
+
+    {% endfor %}
+</div>
+
+<div class="content">
+
+    {% block content %}
+
+    {% endblock %}
+</div>
+
 </body>
 </html>

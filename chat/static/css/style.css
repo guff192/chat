@@ -1,0 +1,137 @@
+body {
+    margin: 0 10%;
+}
+
+img {
+    width: 80%;
+    height: 80%;
+}
+
+
+.content {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+
+/*Form styles*/
+.login-form,
+.signup-form,
+.password-change-form,
+.password-reset-form {
+    box-shadow: 4px 4px 10px 5px #c0d8ea;
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+
+form li, form p {
+    display: flex;
+    flex-flow: column;
+}
+
+.login-form input[type=submit],
+.signup-form input[type=submit],
+.password-change-form input[type=submit],
+.password-reset-form input[type=submit] {
+    padding: 10px 20px;
+    border-radius: 7px;
+    margin: 0 15%;
+    cursor: pointer;
+}
+
+
+.login-form label,
+.signup-form label,
+.password-change-form label,
+.password-reset-form label {
+    display: block;
+    padding: 5px 0;
+}
+
+.login-form input,
+textarea,
+.signup-form input,
+.password-change-form input,
+.password-reset-form input {
+    margin-bottom: 10px;
+    background-color: #c0d8ea;
+    border: 0;
+    padding: 6px 10px;
+}
+
+.login-heading,
+.signup-heading,
+.password-change-heading,
+.password-reset-heading {
+}
+
+.login-para,
+.signup-para,
+.password-change-para,
+.password-reset-para {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.helptext {
+    color: #bbbbbb;
+}
+
+form li {
+    list-style-type: none;
+}
+
+form .errorlist {
+    color: #901112;
+}
+
+
+/*Navigation bar styles*/
+.nav {
+    background-color: #151b25;
+    padding: 20px;
+}
+
+.nav a {
+    text-decoration: none;
+    line-height: 25px;
+    color: white;
+}
+
+.nav a:hover {
+    text-decoration: underline;
+}
+
+.login-logout-reg-nav {
+    float: right;
+    text-align: right;
+}
+
+.login-logout-reg-nav a {
+    border: 1px solid white;
+    padding: 7px 10px 5px;
+    border-radius: 7px;
+
+}
+
+
+/*Message styles*/
+.message-box {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.success-message {
+    background-color: #99dabc;
+}
+
+.error-message {
+    background-color: #d77070;
+}
